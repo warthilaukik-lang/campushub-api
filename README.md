@@ -1,5 +1,7 @@
 # CampusHub API
 
+![CI](https://github.com/warthilaukik-lang/campushub-api/actions/workflows/ci.yml/badge.svg)
+
 **Live:** https://campushub-api-b2xp.onrender.com/health
 
 REST API for college notes and previous-year question papers.
@@ -10,7 +12,7 @@ JWT authentication with refresh tokens, role-based access, file upload and searc
 - [x] JWT auth: register, login, refresh tokens
 - [x] Notes CRUD with file upload and search
 - [ ] Roles and bookmarks
-- [ ] Tests and CI pipeline
+- [x] Tests and CI pipeline
 - [x] Live deployment
 
 ## Endpoints
