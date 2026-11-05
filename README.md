@@ -1,5 +1,7 @@
 # CampusHub API
 
+**Live:** https://campushub-api-b2xp.onrender.com/health
+
 REST API for college notes and previous-year question papers.
 JWT authentication with refresh tokens, role-based access, file upload and search.
 
@@ -9,7 +11,7 @@ JWT authentication with refresh tokens, role-based access, file upload and searc
 - [x] Notes CRUD with file upload and search
 - [ ] Roles and bookmarks
 - [ ] Tests and CI pipeline
-- [ ] Live deployment
+- [x] Live deployment
 
 ## Endpoints
 
