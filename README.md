@@ -51,6 +51,27 @@ Node.js · TypeScript · Express · PostgreSQL · Prisma · JWT · Zod · Multer
 
 The API runs at http://localhost:3000
 
+## Load test
+
+Run with k6 against the live deployment: 20 virtual users ramping up over 1m45s.
+
+| Metric | Result |
+|---|---|
+| Total requests | 14,313 |
+| Throughput | 136.2 req/s |
+| p95 latency | 126 ms |
+| Failed requests | 0.00% |
+
+Run it yourself:
+
+    k6 run -e BASE_URL=https://campushub-api-b2xp.onrender.com loadtest.js
+
+## How the pipeline works
+
+Push to `main` → GitHub Actions runs the test suite against a Postgres
+service container → the Docker image is built and pushed to GHCR →
+Render redeploys the live service automatically.
+
 ## Environment variables
 
 | Variable | Purpose |
