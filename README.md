@@ -15,6 +15,11 @@ JWT authentication with refresh tokens, role-based access, file upload and searc
 - [x] Tests and CI pipeline
 - [x] Live deployment
 
+## Screenshots
+
+![Health endpoint](docs/health.webp)
+![CI pipeline](docs/ci.webp)
+
 ## Endpoints
 
 | Method | Path | Auth | Description |
@@ -50,6 +55,15 @@ Node.js · TypeScript · Express · PostgreSQL · Prisma · JWT · Zod · Multer
     npm run dev
 
 The API runs at http://localhost:3000
+
+Or with Docker Compose (API + database together):
+
+    docker compose -p campushub-stack up --build -d
+
+Then create the tables:
+
+    export DATABASE_URL="postgresql://postgres:postgres@localhost:5434/campushub?schema=public"
+    npx prisma migrate deploy
 
 ## Load test
 
