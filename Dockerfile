@@ -7,6 +7,7 @@ FROM node:20-alpine AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/campushub?schema=public"
 RUN npx prisma generate && npm run build
 
 FROM node:20-alpine AS runtime
