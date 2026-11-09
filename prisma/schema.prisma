@@ -34,9 +34,9 @@ model Note {
 
 model Bookmark {
   id        String   @id @default(uuid())
-  user      User     @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
-  note      Note     @relation(fields: [noteId], references: [id])
+  note      Note     @relation(fields: [noteId], references: [id], onDelete: Cascade)
   noteId    String
   createdAt DateTime @default(now())
 
