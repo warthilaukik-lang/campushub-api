@@ -52,3 +52,11 @@ export async function updateNote(
 
   return prisma.note.update({ where: { id }, data, select: publicFields });
 }
+
+export async function deleteNote(id: string) {
+  const note = await prisma.note.findUnique({ where: { id }, select: { id: true } });
+  if (!note) throw new HttpError(404, 'Note not found');
+
+  await prisma.note.delete({ where: { id } });
+  return { deleted: true };
+}

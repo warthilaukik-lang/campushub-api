@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { authRouter } from './modules/auth/auth.routes';
 import { notesRouter } from './modules/notes/notes.routes';
+import { bookmarksRouter } from './modules/bookmarks/bookmarks.routes';
 import { requireAuth } from './middleware/auth';
 import { HttpError } from './lib/httpError';
 import { UPLOAD_DIR } from './lib/upload';
@@ -18,6 +19,7 @@ app.get('/health', (_req, res) => {
 app.use('/uploads', express.static(UPLOAD_DIR));
 app.use('/auth', authRouter);
 app.use('/notes', notesRouter);
+app.use('/bookmarks', bookmarksRouter);
 
 app.get('/me', requireAuth, (req, res) => {
   res.json({ user: req.user });
