@@ -11,7 +11,7 @@ JWT authentication with refresh tokens, role-based access, file upload and searc
 - [x] Project skeleton, Prisma schema, health endpoint
 - [x] JWT auth: register, login, refresh tokens
 - [x] Notes CRUD with file upload and search
-- [ ] Roles and bookmarks
+- [x] Roles and bookmarks
 - [x] Tests and CI pipeline
 - [x] Live deployment
 
@@ -33,6 +33,10 @@ JWT authentication with refresh tokens, role-based access, file upload and searc
 | GET | /notes/:id | none | Get one note |
 | POST | /notes | Bearer | Upload a note (multipart, field `file`) |
 | PATCH | /notes/:id | Bearer | Update your own note |
+| DELETE | /notes/:id | admin | Delete a note |
+| GET | /bookmarks/me | Bearer | Your bookmarks |
+| POST | /bookmarks | Bearer | Bookmark a note |
+| DELETE | /bookmarks/:id | Bearer | Remove a bookmark |
 
 ## Stack
 
