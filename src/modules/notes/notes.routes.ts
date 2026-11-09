@@ -17,7 +17,7 @@ notesRouter.get('/', async (req, res) => {
 });
 
 notesRouter.get('/:id', async (req, res) => {
-  res.json(await notesService.getNote(req.params.id));
+  res.json(await notesService.getNote(req.params.id as string));
 });
 
 notesRouter.post('/', requireAuth, upload.single('file'), async (req, res) => {
@@ -47,9 +47,9 @@ notesRouter.patch('/:id', requireAuth, async (req, res) => {
     res.status(400).json({ error: 'Validation failed', issues: parsed.error.issues });
     return;
   }
-  res.json(await notesService.updateNote(req.params.id, req.user!.id, parsed.data));
+  res.json(await notesService.updateNote(req.params.id as string, req.user!.id, parsed.data));
 });
 
 notesRouter.delete('/:id', requireAuth, requireRole('ADMIN'), async (req, res) => {
-  res.json(await notesService.deleteNote(req.params.id));
+  res.json(await notesService.deleteNote(req.params.id as string));
 });
