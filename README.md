@@ -38,6 +38,8 @@ JWT authentication with refresh tokens, role-based access, file upload and searc
 | POST | /bookmarks | Bearer | Bookmark a note |
 | DELETE | /bookmarks/:id | Bearer | Remove a bookmark |
 
+Deleting a note cascades to its bookmarks.
+
 ## Stack
 
 Node.js · TypeScript · Express · PostgreSQL · Prisma · JWT · Zod · Multer
